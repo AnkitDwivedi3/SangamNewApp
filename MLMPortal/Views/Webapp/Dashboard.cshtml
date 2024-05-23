@@ -1,0 +1,588 @@
+﻿@model  MLMPortal.Models.Registration
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layoutapp.cshtml";
+}
+
+
+@using System.Data;
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link href="~/Content/WebApp/cssPB/style.css" rel="stylesheet" />
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<style>
+
+    .fix-footer .footer-fix-icon {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        background: #020202;
+        padding: 10px;
+        z-index: 100;
+    }
+
+    @@media screen and (min-device-width: 280px) and (max-device-width: 340px) {
+        .nnn {
+            width: 100% !important;
+            padding: 5px;
+            font-size: 10px;
+        }
+    }
+
+    .box1 .span1 b {
+        position: absolute;
+        top: 34% !important;
+        right: 88% !important;
+        transform: rotate(288deg) !important;
+        text-align: center;
+    }
+
+    @@media (max-width: 576px) {
+
+        .box1 .span1 b {
+            position: absolute;
+            top: 31% !important;
+            right: 83% !important;
+            transform: rotate(287deg);
+            text-align: center;
+        }
+
+        .box1 .span4 b {
+            position: absolute;
+            top: 12% !important;
+            right: 23% !important;
+            transform: rotate(43deg);
+        }
+
+        .box1 .span5 b {
+            position: absolute;
+            top: 31% !important;
+            right: 8% !important;
+            transform: rotate(78deg);
+            text-align: center;
+        }
+
+        .box2 .span1 b {
+            position: absolute;
+            top: 29% !important;
+            right: 87% !important;
+            transform: rotate(292deg);
+        }
+
+        .box2 .span2 b {
+            position: absolute;
+            top: 11% !important;
+            right: 71% !important;
+            transform: rotate(-33deg);
+            text-align: center;
+        }
+    }
+    .modal.show .modal-dialog {
+        -webkit-transform: none;
+        transform: none;
+        border: 1px solid;
+    }
+
+    .bd-1 {
+        border: 1px solid !important;
+        padding: 12px;
+    }
+
+    .widadd {
+        background-color: red;
+        padding: 5px;
+        border-radius: 5px;
+        background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%);
+        color: #000;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .bt-del {
+        background-color: red;
+        border: 1px solid red;
+        padding: 4px;
+        font-weight: 700;
+    }
+
+    .p-marquee {
+        padding-bottom: 5%;
+    }
+
+    .popover-header {
+        background-color: #cc9d21;
+        border-bottom: 1px solid #000000;
+        font-size: 13px;
+    }
+
+    .main_data .nnn br {
+        display: none;
+    }
+
+
+    .main_data .nnn {
+        padding-left: 15px;
+    }
+
+    .circle p {
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        margin: -20px 0 0 -88px;
+        width: 100%;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+        color: #ffaf04;
+        font-weight: 700;
+        z-index: 999;
+    }
+
+    .earn-box {
+        background: #710606;
+    }
+
+    .circle div {
+        display: none;
+    }
+
+    @@media(max-width:576px) {
+        .p-marquee {
+            margin-bottom: 30px;
+        }
+    }
+
+    .ml-3, .mx-3 {
+        margin-left: 6rem !important;
+    }
+
+    .bl {
+        margin-left: 13rem !important;
+    }
+
+
+
+
+    .swal-overlay--show-modal .swal-modal {
+        background: linear-gradient(to bottom, #5f0010 0%,#b0001e 100%);
+        opacity: 1;
+        pointer-events: auto;
+        box-sizing: border-box;
+        -webkit-animation: showSweetAlert .3s;
+        animation: showSweetAlert .3s;
+        will-change: transform;
+    }
+
+    .swal-modal {
+        width: 478px;
+        opacity: 0;
+        pointer-events: none;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        position: static;
+        margin: 20px auto;
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        z-index: 10001;
+        transition: opacity .2s,-webkit-transform .3s;
+        transition: transform .3s,opacity .2s;
+        transition: transform .3s,opacity .2s,-webkit-transform .3s;
+    }
+
+    .swal-button {
+        background-color: #ffbf05;
+        color: #000;
+        border: none;
+        box-shadow: none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 24px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .swal-icon--success__line {
+        height: 5px;
+        background-color: #a5dc86;
+        display: block;
+        border-radius: 2px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .swal-icon--success:after, .swal-icon--success:before {
+        border-radius: 50%;
+        width: 60px;
+        height: 120px;
+        background: #fff0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .swal-modal {
+        height: 316px;
+        width: 386px;
+    }
+
+    .swal-icon--success__ring {
+        width: 80px;
+        height: 81px;
+        border: 4px solid hsla(98,55%,69%,.2);
+        border-radius: 50%;
+        box-sizing: content-box;
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        z-index: 2;
+        background-image: url(../App/globe-img/d-icon/2.png);
+        background-size: 99%;
+    }
+
+    .swal-title {
+        color: rgb(255 255 255);
+    }
+
+    .swal-text {
+        color: white;
+    }
+
+
+
+
+
+
+.blinkcall {
+    position: fixed;
+    z-index: 10;
+    bottom: 5%;
+    right: 0%;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: content-box;
+    display: block;
+    width: 32px;
+    height: 44px;
+
+    border-radius: 50%;
+    padding: 18px 20px 18px 28px;
+}
+
+
+
+
+
+.blinkcall:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #1ba710;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+    .blinkcall span {
+        display: block;
+        position: relative;
+        z-index: 3;
+        width: 50px;
+        height: 50px;
+        background: url(../../App/img/home_slider-img.png);
+        background-size: cover;
+        background-position: center;
+        margin-left: -12px;
+        margin-top: -2px;
+    }
+
+
+
+
+
+.blinkcall:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 200ms;
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 32%);
+}
+
+
+
+
+.blinkcall:hover:after {
+ /* background-color: darken(#fa183d, 10%);*/
+}
+@@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+</style>
+
+
+<script>
+    $(document).ready(function () {
+
+        $(".close1").click(function () {
+            $("#MyPopupnew1").hide();
+        });
+
+        $(".close").click(function () {
+            $("#MyPopupnew").hide();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#MyPopupnew1").modal('show');
+        //$("#MyPopupnew").modal('show');
+    });
+</script>
+
+
+
+<div id="MyPopupnew1" class="modal fade" role="dialog">
+    <div class="modal-dialog dd">
+
+        <div class="modal-content" style="background: #ffffff !important;">
+            <div class="modal-header">
+                <button type="button" class="close1" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title"></h4>
+            </div>
+
+            <div class="media border p-3 d-block">
+
+                @*<img src="~/App/rrr.png" alt="" class="rounded" style="width: 100%;" />*@
+
+
+                <h4>All Users Immediately Update Your <b>UPI</b> Details</h4>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<my-spinner>
+    <div ng-show="showSpinner" class="nexo-overlay ng-hide" style="width: 100%; height: 100%; background: rgba(255, 255, 255, 0.9); z-index: 5000; position: absolute; top: 0px; left: 0px;display:none" id="showSpinner">
+        <div class="spinner-border m-2" role="status" style="position: absolute; top: 30%; left: 50%; margin-top: -25px; margin-left: -25px;"></div>
+    </div>
+</my-spinner>
+
+<div class="container-fluid bg-color p-0">
+    <div class="container-fluid globe-box p-0 mb-4">
+        <div class="mp1">
+
+
+
+            <div class="icon-box" >
+                <ul class="row">
+                    <li class="col-12">
+                        <a href="/WebApp/AddFund">
+                            <p>Add Fund</p>
+                        </a>
+                    </li>
+                    <li class="col-12">
+                        <a href="/WebApp/Topup">
+                            <p>Topup</p>
+                        </a>
+                    </li>
+                    <li class="col-12">
+                        <a href="/WebApp/Withdroll">
+                            <p>Withdroll</p>
+                        </a>
+                    </li>
+                    <li class="col-12">
+                        <a href="/PaymentReport/P2P_Transfer">
+                            <p>P2P</p>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+            
+
+            
+
+            
+
+            <div class="clear"></div>
+            <div class="wire-heading">
+                <h2>My Dashboard </h2>
+                <div class="earn-box22">
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.TotalWithdraw</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">Total Withdraw</h6>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.LedgerBalance</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">Main Wallet</h6>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.FundWallet</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">Fund Wallet</h6>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.AllTeam</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">My Team</h6>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.MyDirects</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">My Directs</h6>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.DirectIncome</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">Direct Income</h6>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.LevelIncome</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">Level Income</h6>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-6">
+                            <div class="team">
+                                <img src="/Content/WebApp/globe-img/4.png" class="d-icon" />
+                                <p>
+                                    <span id="LblContribution">@Model.ROIIncome</span>
+                                </p>
+                                <a href="/App/Warehouse">
+                                    <h6 class="total">Roi Income</h6>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+      
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
