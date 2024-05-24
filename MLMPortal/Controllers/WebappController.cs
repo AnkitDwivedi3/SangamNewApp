@@ -200,7 +200,7 @@ namespace MLMPortal.Controllers
             try
             {
                 Objp.Action = 1;
-                Objp.Username = Convert.ToString(Session["MUserName"]);
+                Objp.Username = Convert.ToString(Session["username"]);
                 DataTable dt = objL.UserProfile(Objp, "Proc_UserProfile");
                 if (dt.Rows.Count > 0)
                 {
