@@ -1,7 +1,14 @@
 ﻿
 @{
     ViewBag.Title = "MyTeam";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Convert.ToString(Session["LoginSourse"]) == "app")
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layoutapp.cshtml";
+    }
 }
 
 @using System.Data;
