@@ -4465,6 +4465,18 @@ namespace MLMPortal.Models
             dt = db.ExecProcDataTable("USP_GetAppData", param);
             return dt;
         }
+        public DataTable EditProfile(profile obj, string v)
+        {
+            SqlParameter[] para = {
+            new SqlParameter("@ifsccode",obj.ifsccode),
+            new SqlParameter("@bankname",obj.bankname),
+            new SqlParameter("@branchname",obj.branchname),
+            new SqlParameter("@accountno",obj.accountno),
+            new SqlParameter("@memberid",obj.Member_Id),
+              new SqlParameter("@upiId",obj.UPIID)
+            };
+            return db.ExecProcDataTable(v, para);
+        }
     }
 }
 

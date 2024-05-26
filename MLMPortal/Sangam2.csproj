@@ -1680,6 +1680,7 @@
     <Content Include="Views\Webapp\ChangePassword.cshtml" />
     <Content Include="Views\Webapp\ROIIncomeReport.cshtml" />
     <Content Include="Views\Webapp\Withdroll.cshtml" />
+    <Content Include="Views\Webapp\Profile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

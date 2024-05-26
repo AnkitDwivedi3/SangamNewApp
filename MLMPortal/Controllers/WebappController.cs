@@ -228,8 +228,27 @@ namespace MLMPortal.Controllers
         {
             return View();
         }
+        public JsonResult InsertChangePassword(string OldPass, string Password, string conformPassword)
+        {
+            string flag = "0";
+            string msg = "Server Not Responding";
 
+            try
+            {
 
+                string MemberId=Session["username"].ToString();
+                DataTable dt = objL.ChangePassword("3",MemberId, OldPass, Password, conformPassword);
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    msg = dt.Rows[0]["msg"].ToString();
+                    flag = dt.Rows[0]["id"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return Json(new { flag = flag , msg = msg }, JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult ROIIncomeReport()
         {
@@ -267,7 +286,59 @@ namespace MLMPortal.Controllers
             return View(obj);
         }
 
+        public ActionResult Profile()
+        {
 
+            profile Objp = new profile();
+            try
+            {
+                Objp.Action = 1;
+                Objp.Username = Session["username"].ToString();
+                DataTable dt = objL.UserProfile(Objp, "Proc_UserProfile");
+                if (dt.Rows.Count > 0)
+                {
+                    Objp.Name = dt.Rows[0]["Name"].ToString();
+                    Objp.Mobile = dt.Rows[0]["mobile"].ToString();
+                    Objp.Email = dt.Rows[0]["Email"].ToString();
+                    Objp.Password = dt.Rows[0]["psw"].ToString();
+                    Objp.ImgProfile = dt.Rows[0]["profileimgpath"].ToString();
+                    Objp.ifsccode = dt.Rows[0]["BankIfscCode"].ToString();
+                    Objp.bankname = dt.Rows[0]["BankName"].ToString();
+                    Objp.branchname = dt.Rows[0]["BankBranch"].ToString();
+                    Objp.accountno = dt.Rows[0]["BankaccNo"].ToString();
+                    Objp.UPIID = dt.Rows[0]["UPI_Id"].ToString();
+
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception exc)
+            {
+                Response.Write("<script>alert('" + exc.Message + "')</script>");
+                //throw exc;
+            }
+            return View(Objp);
+        }
+
+
+        [HttpPost]
+        public JsonResult EditProfile(profile obj)
+        {
+            var data = "0";
+            try
+            {
+                obj.Member_Id = Session["username"].ToString();
+                DataTable dt = objL.EditProfile(obj, "Proc_EditProfile");
+                data = dt.Rows[0]["msg"].ToString();
+            }
+            catch (Exception ex)
+            {
+                data = ex.Message;
+            }
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
 
 
 
