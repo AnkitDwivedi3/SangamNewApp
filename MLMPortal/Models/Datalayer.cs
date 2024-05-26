@@ -9,8 +9,6 @@ namespace MLMPortal.Models
 {
     public class Datalayer
     {
-
-
         dbHelper db = new dbHelper();
 
 
@@ -4473,7 +4471,7 @@ namespace MLMPortal.Models
             new SqlParameter("@branchname",obj.branchname),
             new SqlParameter("@accountno",obj.accountno),
             new SqlParameter("@memberid",obj.Member_Id),
-              new SqlParameter("@upiId",obj.UPIID)
+            new SqlParameter("@upiId",obj.UPIID)
             };
             return db.ExecProcDataTable(v, para);
         }

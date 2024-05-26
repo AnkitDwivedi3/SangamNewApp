@@ -50,7 +50,7 @@ namespace MLMPortal.Controllers
         }
 
 
-        public JsonResult AuthenticateUser(string UserName, string Password)
+        public JsonResult AuthenticateUser(string UserName, string Password,string LoginSourse)
         {
             string[] msg = new string[2];
             try
@@ -75,6 +75,11 @@ namespace MLMPortal.Controllers
                     Session["usercode"] = dt.Rows[0]["user_code"].ToString();
                     Session["prodilepic"] = dt.Rows[0]["profileimgpath"].ToString();
                     Session["Name"] = dt.Rows[0]["Name"].ToString();
+
+                    Session["LoginSourse"] = LoginSourse;
+
+
+
                     if (dt.Rows[0]["Role"].ToString() == "1" || dt.Rows[0]["Role"].ToString() == "5")
                     {
 

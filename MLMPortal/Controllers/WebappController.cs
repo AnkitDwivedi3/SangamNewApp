@@ -306,7 +306,7 @@ namespace MLMPortal.Controllers
                     Objp.bankname = dt.Rows[0]["BankName"].ToString();
                     Objp.branchname = dt.Rows[0]["BankBranch"].ToString();
                     Objp.accountno = dt.Rows[0]["BankaccNo"].ToString();
-                    Objp.UPIID = dt.Rows[0]["UPI_Id"].ToString();
+                    Objp.UPIID = dt.Rows[0]["UPIID"].ToString();
 
                 }
                 else
@@ -324,24 +324,23 @@ namespace MLMPortal.Controllers
 
 
         [HttpPost]
-        public JsonResult EditProfile(profile obj)
+        public ActionResult Profile(profile obj)
         {
-            var data = "0";
+            ViewBag.Data = "Server Not Responding";
             try
             {
                 obj.Member_Id = Session["username"].ToString();
                 DataTable dt = objL.EditProfile(obj, "Proc_EditProfile");
-                data = dt.Rows[0]["msg"].ToString();
+
+                if (dt!=null &&dt.Rows.Count>0)
+                {
+                    ViewBag.Data = dt.Rows[0]["msg"].ToString();
+                }
             }
             catch (Exception ex)
             {
-                data = ex.Message;
             }
-            return Json(data, JsonRequestBehavior.AllowGet);
+            return View(obj);
         }
-
-
-
-
     }
 }

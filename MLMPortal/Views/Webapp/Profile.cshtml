@@ -1,6 +1,5 @@
 ﻿@model MLMPortal.Models.profile
 @using System.Data
-
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Views/Shared/_Layoutapp.cshtml";
@@ -26,8 +25,7 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-                @using (Ajax.BeginForm("EditProfile", "App", new AjaxOptions() { OnSuccess = "fnSuccess", OnFailure = "fnFailure", HttpMethod = "POST", LoadingElementId = "loading" }, new { @enctype = "multipart/form-data" }))
-                {
+                <form method="post">
                     <div class="level-money">
                         <div class="media border p-3">
                             <div class="media-body">
@@ -158,7 +156,7 @@
 
                         </div>
                     </div>
-                }
+                </form>
             </div>
 
         </div>
@@ -166,10 +164,27 @@
 
 
 </div>
+<script>
+
+        $(document).ready(function () {
+            debugger;
+
+            if ('@ViewBag.Data' != '') {
+                alert('@ViewBag.Data');
+            }
 
 
 
-    <script>
+
+
+        })
+
+
+
+
+
+
+
 
         function fnSuccess(data) {
             alert(data);
@@ -180,5 +195,5 @@
             alert(err);
         }
 
-    </script>
+</script>
 
