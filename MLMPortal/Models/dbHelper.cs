@@ -110,8 +110,8 @@ namespace MLMPortal.Models
                 adp.Fill(dt);
             }
            catch (Exception ex)
-            {
-                throw ex;
+            { 
+
             }
             return dt;
         }

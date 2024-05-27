@@ -1,7 +1,14 @@
 ﻿@model MLMPortal.Models.Registration
 @{
     ViewBag.Title = "LevelTree";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Convert.ToString(Session["LoginSourse"]) == "app")
+    {
+        Layout = "~/Views/Shared/_Layoutapp.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 }
 
 @*<script src="~/assetsnew/js/jquery.min.js"></script>*@

@@ -1,7 +1,14 @@
 ﻿@model MLMPortal.Models.PayoutReport
 @{
     ViewBag.Title = "LevelIncome";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Convert.ToString(Session["LoginSourse"]) == "app")
+    {
+        Layout = "~/Views/Shared/_Layoutapp.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 }
 @using System.Data;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
