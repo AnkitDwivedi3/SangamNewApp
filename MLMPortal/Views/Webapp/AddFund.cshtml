@@ -1,7 +1,16 @@
 ﻿@model MLMPortal.Models.PropertyClass
 @{
     ViewBag.Title = "Fundrequest";
-    Layout = "~/Views/Shared/_Layoutapp.cshtml";
+    if (Convert.ToString(Session["LoginSourse"]) == "app")
+    {
+
+        Layout = "~/Views/Shared/_Layoutapp.cshtml";
+        
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 }
 
 <style>
@@ -9,6 +18,12 @@
         text-align: center;
         font-size: 40px;
         margin-top: 0px;
+    }
+    table tr td,th{
+        color:black
+    }
+    a {
+        color: black;
     }
 </style>
 

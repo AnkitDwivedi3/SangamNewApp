@@ -6,7 +6,7 @@
 }
 
 .table-bordered td, .table-bordered th {
-    border: 1px solid #fdc508;
+    border: 1px solid #d1d1d1;
 }
 
 ::-moz-placeholder {
@@ -39,9 +39,6 @@
     /* background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png"); */
 }
 
-a {
-    color: #ececec !important;
-}
 
 .form-control {
     display: block;
@@ -384,7 +381,7 @@ i.fa.fa-globe {
     display: block;
     overflow: hidden;
     display: block;
-    border: 2px solid #fdc508;
+    border: 2px solid #40350e;
     border-radius: 13px;
 }
 
@@ -392,7 +389,6 @@ i.fa.fa-globe {
         -ms-flex: 1;
         flex: 1;
         padding: 15px;
-        color: #dfb733;
     }
 
         .inner-invest-box .media-body h4 {
@@ -410,12 +406,11 @@ i.fa.fa-globe {
         text-align: left;
         font-size: 16px;
         padding: 12px 0;
-        color: #dfb733;
         border-bottom: 1px solid #dfb733;
     }
 
     .inner-invest-box .business-text p span {
-        color: #f3bd08;
+        color: #5c4804;
         font-weight: 600;
         max-width: 150px;
         display: block;
@@ -471,11 +466,10 @@ i.fa.fa-globe {
     /* background: #eab70c; */
     display: block;
     overflow: hidden;
-    color: #dfb733;
+    color: #2e0000;
     FONT-SIZE: 19PX;
     padding: 12px 15px;
     MARGIN: 0px 0 10px;
-    border: 2px solid #dfb733;
     border-radius: 13px;
 }
 
@@ -808,7 +802,7 @@ h4.invite-title {
         padding: 10px 15px;
         background: transparent;
         display: block !important;
-        BORDER: 2PX SOLID #dfb733;
+        BORDER: 2PX SOLID #e13300;
         color: #dfb733;
         border-radius: 20px;
         text-transform: uppercase;
@@ -816,7 +810,7 @@ h4.invite-title {
 
         .admin-nav .list-group li .fa {
             font-size: 15px;
-            color: #dfb733;
+            color: #e13300;
         }
 
 .fa.fa-ico {
@@ -827,7 +821,7 @@ h4.invite-title {
 .admin-nav .list-group li span:first-child {
     font-size: 15px;
     margin-left: 7px;
-    color: #dfb733;
+    color: #3a2d00;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
 }
@@ -839,7 +833,7 @@ h4.invite-title {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%);
+    /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%);*/
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 98%);
     border-radius: 50%;
     margin: -7px 0 0;
@@ -898,7 +892,7 @@ h4.invite-title {
 
 .level-money .form-inline .form-control {
     color: white border:1px solid silver;
-    border: 1px solid #e9bd42;
+    border: 2px solid #ff4500;
     margin: 0 0 13px;
 }
 
@@ -906,7 +900,7 @@ h4.invite-title {
     /* background: #0a1025; */
     border-radius: 12px;
     padding: 10px;
-    border: 2px solid #dfb733;
+    border: 2px solid #ff4500;
 }
 
 .invite-text-box p {
@@ -1119,7 +1113,7 @@ input[type=file]::file-selector-button {
     font-size: 16px;
     margin-left: 15px;
     font-family: sans-serif;
-    color: #dfb733;
+    color: #3a2d00;
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
 }
@@ -1139,8 +1133,8 @@ input[type=file]::file-selector-button {
 .table td, .table th {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #fdc508;
-    color: #dfb733;
+    border-top: 1px solid #d1d1d1;
+    color: #3c1509;
 }
 
 .form-control:focus {
@@ -1183,9 +1177,9 @@ input[type=file]::file-selector-button {
 .business-text button, .business-text input {
     overflow: visible;
     background: transparent;
-    border: 2px solid #dfb733;
+    border: 2px solid #ff4500;
     width: 100%;
-    color: #dfb733;
+    color: #1c1601;
 }
 
 .yuuu i {
@@ -1593,7 +1587,7 @@ input[type=file]::file-selector-button {
 
     .card-header.footer-fix-icon .nav-tabs li a p {
         font-size: 12px;
-        color: #ffffff;
+        color: #FEDB38;
         margin: 0;
         TEXT-TRANSFORM: uppercase;
         LETTER-SPACING: 1PX;
@@ -1606,7 +1600,7 @@ input[type=file]::file-selector-button {
         height: 50px;
         line-height: 50px;
         text-align: center;
-        background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%);
+        /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%);*/
         box-shadow: 0 1px 4px 0 rgb(0 0 0 / 98%);
         border-radius: 50%;
         margin: -25px 0 0;
@@ -1640,7 +1634,7 @@ input[type=file]::file-selector-button {
         font-size: 16px;
         margin-left: 15px;
         font-family: sans-serif;
-        color: #dfb733;
+        color: #3a2d00;
         font-weight: 300;
         font-family: 'Montserrat', sans-serif;
     }
@@ -1714,7 +1708,7 @@ input[type=file]::file-selector-button {
         height: 30px;
         line-height: 30px;
         text-align: center;
-        background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%);
+        /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%);*/
         box-shadow: 0 1px 4px 0 rgb(0 0 0 / 98%);
         border-radius: 50%;
         margin: 0px 0 0;
