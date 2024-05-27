@@ -151,14 +151,11 @@
     <Content Include="Content\WebApp\globe-img\icon_189.1c757b43.png" />
     <Content Include="Content\WebApp\globe-img\login-bottom.png" />
     <Content Include="Content\WebApp\globe-img\logo01.png" />
-    <Content Include="Content\WebApp\globe-img\logo01old.png" />
-    <Content Include="Content\WebApp\globe-img\logo1old.png" />
     <Content Include="Content\WebApp\globe-img\Mission.png" />
     <Content Include="Content\WebApp\globe-img\modal-bg.png" />
     <Content Include="Content\WebApp\globe-img\mylogo.png" />
     <Content Include="Content\WebApp\globe-img\MyTeam.png" />
     <Content Include="Content\WebApp\globe-img\qrcode.jpg" />
-    <Content Include="Content\WebApp\globe-img\qrcode2.jpg" />
     <Content Include="Content\WebApp\globe-img\Recharge.png" />
     <Content Include="Content\WebApp\globe-img\slider\1.jpg" />
     <Content Include="Content\WebApp\globe-img\slider\2.jpg" />
