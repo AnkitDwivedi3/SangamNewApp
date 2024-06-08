@@ -168,7 +168,7 @@
                         <tbody>
                             @if (Model.dt != null && Model.dt.Rows.Count > 0)
                             {
-                                <tr style="font-weight: bold; background: #ffc107">
+                                <tr style="font-weight: bold; background: #a9dbaa">
                                     <td colspan="3" style="text-align:center">Total</td>
                                     <td>@Model.dt.Compute("Sum(Income)", "").ToString()</td>
                                     <td></td>

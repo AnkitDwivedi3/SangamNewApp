@@ -48,7 +48,7 @@
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #f6de6e;
+    color: #e13300;
     background-color: #fff0;
     background-clip: padding-box;
     border: 2px solid #0e173512;
@@ -406,7 +406,7 @@ i.fa.fa-globe {
         text-align: left;
         font-size: 16px;
         padding: 12px 0;
-        border-bottom: 1px solid #dfb733;
+        border-bottom: 1px solid #020202;
     }
 
     .inner-invest-box .business-text p span {
@@ -452,7 +452,7 @@ i.fa.fa-globe {
         display: block;
         width: 100%;
         text-align: center;
-        background: #dfb733;
+        background: #a9d3c9;
         font-weight: 800;
         /* background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #ffaf04 30%, #ffc608 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #9f7a00 62.5%, #fff4d0 100%); */
         letter-spacing: 2px;
@@ -508,7 +508,7 @@ i.fa.fa-globe {
 
 .earn-1 {
     float: left;
-    border-right: 2px solid #ffbc07;
+    border-right: 2px solid #282724;
     /* background: #0a1025; */
     width: 50%;
     text-align: center;
@@ -943,8 +943,8 @@ input[type=file]::file-selector-button {
 
 .btn-success {
     color: #000;
-    background-color: #dfb733;
-    border-color: #dfb733;
+   /* background-color: #f1b700;*/
+    border-color: #f1b700;
     font-weight: 700;
 }
 
@@ -1029,7 +1029,7 @@ input[type=file]::file-selector-button {
 .mp1 {
     margin: 22px 12px;
     font-size: 12px;
-    color: #dfb733;
+    /*color: #dfb733;*/
 }
 
 .BX1 {
@@ -1270,7 +1270,7 @@ input[type=file]::file-selector-button {
 }
 
 input[placeholder], [placeholder], *[placeholder] {
-    color: #c1b46b !important;
+    color: #ff0007 !important;
 }
 
 
@@ -1612,7 +1612,7 @@ input[type=file]::file-selector-button {
         padding: 10px 15px;
         background: transparent;
         display: block !important;
-        BORDER: 2PX SOLID #dfb733;
+        /*BORDER: 2PX SOLID #dfb733;*/
         color: #dfb733;
         border-radius: 20px;
         text-transform: uppercase;
