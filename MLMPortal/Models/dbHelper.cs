@@ -11,7 +11,7 @@ namespace MLMPortal.Models
     public class dbHelper
     {
         // private static string consString = "Data Source=DESKTOP-JADR545;Initial Catalog=MLMPortal1db;Integrated Security=True";
-        private static string consString = "Data Source=65.109.91.168;Initial Catalog=Sangam2mlmdb;User Id=vsslocaluser;Password=Vss@2024@##$$@;";
+        private static string consString = "Data Source=65.109.91.168;Initial Catalog=Sangam2mlmdb;User Id=NewMLMUser;Password=mlmuser@2023##$;";
 
         //private static string consString = "Data Source=DESKTOP-JADR545\\SQLEXPRESS;Initial Catalog=aunmoneyworldmlmdb;Integrated Security=True;";
         //private static string consString = "Data Source=LAPTOP-ETEAB50Q;Initial Catalog=aunmoneyworldmlmdb;Integrated Security=True;";
